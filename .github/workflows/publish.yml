@@ -1,0 +1,27 @@
+name: Publish
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: wasm32-unknown-unknown
+    - uses: Swatinem/rust-cache@v2
+    - run: cargo test
+    - run: cargo clippy -- -D warnings
+    - run: cargo install dioxus-cli --version =0.8.0-alpha.0 --locked
+    - run: dx build --release --debug-symbols false --platform web
+    - run: cp target/dx/web/release/web/public/index.html target/dx/web/release/web/public/404.html
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: target/dx/web/release/web/public/
+    - uses: actions/deploy-pages@v4
