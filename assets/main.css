@@ -1,0 +1,28 @@
+body {
+    background-color: #0f1116;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px auto;
+    max-width: 90ch;
+}
+
+a {
+    color: #91a4d2;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: #b8c8e8;
+}
+
+#navbar a {
+    color: #ffffff;
+    margin-right: 20px;
+}
+#navbar a:hover {
+    color: #91a4d2;
+}
+
+li:not(:first-child) {
+    margin-top: 10px;
+}
