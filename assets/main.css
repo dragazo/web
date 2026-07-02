@@ -1,26 +1,64 @@
-body {
-    background-color: #0f1116;
-    color: #ffffff;
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#main {
+    --bgcolor: #1f1f1f;
+    --fgcolor: #c4c4c4;
+    --linkcolor: #91a4d2;
+    --maxwidth: 90ch;
+
+    background-color: var(--bgcolor);
+    color: var(--fgcolor);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 20px auto;
-    max-width: 90ch;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+#header, #footer {
+    background-color: color-mix(in srgb, var(--bgcolor) 75%, black);
+    padding: 20px 0 20px 0;
+}
+#content {
+    border-block: 1px solid color-mix(in srgb, var(--fgcolor), var(--bgcolor));
+    padding: 20px 0 20px 0;
+    flex-grow: 1;
+}
+#footer {
+    text-align: center;
+}
+
+.container {
+    max-width: var(--maxwidth);
+    margin: 0 auto 0 auto;
+}
+.container > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+.container > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#header a {
+    color: var(--fgcolor);
+    margin-right: 30px;
+}
+#header a:hover {
+    color: white;
+}
+
+
+
 a {
-    color: #91a4d2;
+    color: var(--linkcolor);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 a:hover {
-    color: #b8c8e8;
-}
-
-#navbar a {
-    color: #ffffff;
-    margin-right: 20px;
-}
-#navbar a:hover {
-    color: #91a4d2;
+    color: color-mix(in srgb, var(--linkcolor) 50%, white);
 }
 
 li:not(:first-child) {

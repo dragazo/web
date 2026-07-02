@@ -3,6 +3,8 @@ use dioxus::prelude::*;
 mod publications;
 mod util;
 
+const MAIN_CSS: Asset = asset!("/assets/main.css");
+
 #[derive(Debug, Clone, Routable, PartialEq)]
 enum Route {
     #[layout(Layout)]
@@ -11,8 +13,6 @@ enum Route {
     #[route("/publications")]
     Publications {},
 }
-
-const MAIN_CSS: Asset = asset!("/assets/main.css");
 
 fn main() {
     dioxus::launch(App);
@@ -31,11 +31,27 @@ fn App() -> Element {
 fn Layout() -> Element {
     rsx! {
         div {
-            id: "navbar",
-            Link { to: Route::Home {}, "Home" }
-            Link { to: Route::Publications {}, "Publications" }
+            id: "header",
+            div {
+                class: "container",
+                Link { to: Route::Home {}, "Home" }
+                Link { to: Route::Publications {}, "Publications" }
+            }
         }
-        Outlet::<Route> {}
+        div {
+            id: "content",
+            div {
+                class: "container",
+                Outlet::<Route> {}
+            }
+        }
+        div {
+            id: "footer",
+            div {
+                class: "container",
+                small { "© 2026 Devin Jean" }
+            }
+        }
     }
 }
 
@@ -43,7 +59,6 @@ fn Layout() -> Element {
 fn Home() -> Element {
     rsx! {
         div {
-            id: "hero",
             div { id: "links",
                 a { href: "https://dioxuslabs.com/learn/0.7/", "📚 Learn Dioxus" }
                 a { href: "https://dioxuslabs.com/awesome", "🚀 Awesome Dioxus" }
