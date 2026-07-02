@@ -5,8 +5,8 @@ authors = ["Devin Jean <emailcruzjean@yahoo.com>"]
 edition = "2021"
 
 [dependencies]
-dioxus = { version = "=0.8.0-alpha.0", features = ["router"] }
-dioxus-free-icons = { version = "0.10.0", features = ["lucide"] }
+dioxus = { version = "0.7.9", features = ["router"] }
+dioxus-free-icons = { version = "0.10.0", features = ["lucide", "font-awesome-brands"] }
 
 [features]
 default = ["web"]

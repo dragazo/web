@@ -19,7 +19,7 @@ jobs:
     - run: cargo test
     - run: cargo clippy -- -D warnings
     - uses: cargo-bins/cargo-binstall@main
-    - run: cargo binstall dioxus-cli --version "=0.8.0-alpha.0" --locked -y
+    - run: cargo binstall dioxus-cli --version 0.7.9 --locked -y
     - run: dx build --release --debug-symbols false --platform web --base-path web
     - run: cp target/dx/web/release/web/public/index.html target/dx/web/release/web/public/404.html
     - uses: actions/upload-pages-artifact@v3

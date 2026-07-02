@@ -1,5 +1,6 @@
 use dioxus::prelude::*;
-use dioxus_free_icons::icons::ld_icons::LdMail;
+use dioxus_free_icons::icons::ld_icons::{LdMail, LdGraduationCap};
+use dioxus_free_icons::icons::fa_brands_icons::{FaGithub, FaOrcid};
 use dioxus_free_icons::Icon;
 
 mod publications;
@@ -33,7 +34,7 @@ fn Layout() -> Element {
         div {
             id: "header",
             div {
-                class: "container",
+                class: "container row buttons",
                 Link { to: Route::Home {}, "Home" }
                 Link { to: Route::Publications {}, "Publications" }
             }
@@ -58,20 +59,22 @@ fn Layout() -> Element {
 #[component]
 fn Home() -> Element {
     rsx! {
-        // Icon { width: 30, height: 30, fill: "black", icon: LdMail }
         div {
-            class: "card row",
+            class: "card row center fit",
+            img { class: "profile", src: asset!("/assets/profile.png") }
             div {
-                class: "profile",
-                img { src: asset!("/assets/profile.png") }
                 h2 { "Devin Jean" }
-            }
-            div {
-                h2 { "Contact" }
-                a { href: "mailto:devin.jean@mtsu.edu",  "Email" }
+                p { "Assistant Professor" br {} "Department of Computer Science" br {} "Middle Tennessee State University" }
+                h3 { "Contact" }
+                div {
+                    class: "row buttons",
+                    a { href: "mailto:devin.jean@mtsu.edu", target: "_blank", Icon { width: 35, height: 35, icon: LdMail } }
+                    a { href: "https://github.com/dragazo", target: "_blank", Icon { width: 30, height: 30, icon: FaGithub } }
+                    a { href: "https://orcid.org/0000-0001-9549-2324", target: "_blank", Icon { width: 30, height: 30, icon: FaOrcid } }
+                    a { href: "https://scholar.google.com/citations?user=dNvo_xcAAAAJ&hl=en", target: "_blank", Icon { width: 40, height: 40, icon: LdGraduationCap } }
+                }
             }
         }
-        a { href: "https://github.com/dragazo", "Github" }
     }
 }
 

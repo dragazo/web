@@ -21,11 +21,11 @@ html, body {
 
 #header, #footer {
     background-color: var(--cardcolor);
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
 }
 #content {
     border-block: 1px solid var(--bordercolor);
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
     flex-grow: 1;
 }
 #footer {
@@ -35,6 +35,7 @@ html, body {
 .container {
     max-width: var(--maxwidth);
     margin: 0 auto 0 auto;
+    padding: 0 20px;
 }
 *:first-child {
     margin-top: 0;
@@ -51,11 +52,10 @@ a {
 a:hover {
     color: color-mix(in srgb, var(--linkcolor) 50%, white);
 }
-#header a {
+.buttons a {
     color: var(--fgcolor);
-    margin-right: 30px;
 }
-#header a:hover {
+.buttons a:hover {
     color: white;
 }
 
@@ -67,15 +67,22 @@ a:hover {
 .row {
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.row.center {
+    margin: 0 auto;
+    justify-content: center;
+}
+.fit {
+    width: fit-content;
 }
 
 .profile {
-    text-align: center;
-}
-.profile > img {
+    aspect-ratio: 1;
     width: 20ch;
-    margin: 0 auto 0 auto;
+    margin: 0 20px;
     border-radius: 100%;
 }
 
