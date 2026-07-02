@@ -1,9 +1,9 @@
 use dioxus::prelude::*;
+use dioxus_free_icons::icons::ld_icons::LdMail;
+use dioxus_free_icons::Icon;
 
 mod publications;
 mod util;
-
-const MAIN_CSS: Asset = asset!("/assets/main.css");
 
 #[derive(Debug, Clone, Routable, PartialEq)]
 enum Route {
@@ -22,7 +22,7 @@ fn main() {
 fn App() -> Element {
     rsx! {
         document::Title { "Devin Jean" }
-        document::Link { rel: "stylesheet", href: MAIN_CSS }
+        document::Link { rel: "stylesheet", href: asset!("/assets/main.css") }
         Router::<Route> {}
     }
 }
@@ -58,16 +58,20 @@ fn Layout() -> Element {
 #[component]
 fn Home() -> Element {
     rsx! {
+        // Icon { width: 30, height: 30, fill: "black", icon: LdMail }
         div {
-            div { id: "links",
-                a { href: "https://dioxuslabs.com/learn/0.7/", "📚 Learn Dioxus" }
-                a { href: "https://dioxuslabs.com/awesome", "🚀 Awesome Dioxus" }
-                a { href: "https://github.com/dioxus-community/", "📡 Community Libraries" }
-                a { href: "https://github.com/DioxusLabs/sdk", "⚙️ Dioxus Development Kit" }
-                a { href: "https://marketplace.visualstudio.com/items?itemName=DioxusLabs.dioxus", "💫 VSCode Extension" }
-                a { href: "https://discord.gg/XgGxMSkvUM", "👋 Community Discord" }
+            class: "card row",
+            div {
+                class: "profile",
+                img { src: asset!("/assets/profile.png") }
+                h2 { "Devin Jean" }
+            }
+            div {
+                h2 { "Contact" }
+                a { href: "mailto:devin.jean@mtsu.edu",  "Email" }
             }
         }
+        a { href: "https://github.com/dragazo", "Github" }
     }
 }
 

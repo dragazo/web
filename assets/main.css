@@ -8,6 +8,9 @@ html, body {
     --linkcolor: #91a4d2;
     --maxwidth: 90ch;
 
+    --cardcolor: color-mix(in srgb, var(--bgcolor) 75%, black);
+    --bordercolor: color-mix(in srgb, var(--fgcolor), var(--bgcolor));
+
     background-color: var(--bgcolor);
     color: var(--fgcolor);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,11 +20,11 @@ html, body {
 }
 
 #header, #footer {
-    background-color: color-mix(in srgb, var(--bgcolor) 75%, black);
+    background-color: var(--cardcolor);
     padding: 20px 0 20px 0;
 }
 #content {
-    border-block: 1px solid color-mix(in srgb, var(--fgcolor), var(--bgcolor));
+    border-block: 1px solid var(--bordercolor);
     padding: 20px 0 20px 0;
     flex-grow: 1;
 }
@@ -33,24 +36,12 @@ html, body {
     max-width: var(--maxwidth);
     margin: 0 auto 0 auto;
 }
-.container > *:first-child {
+*:first-child {
     margin-top: 0;
-    padding-top: 0;
 }
-.container > *:last-child {
+*:last-child {
     margin-bottom: 0;
-    padding-bottom: 0;
 }
-
-#header a {
-    color: var(--fgcolor);
-    margin-right: 30px;
-}
-#header a:hover {
-    color: white;
-}
-
-
 
 a {
     color: var(--linkcolor);
@@ -59,6 +50,33 @@ a {
 }
 a:hover {
     color: color-mix(in srgb, var(--linkcolor) 50%, white);
+}
+#header a {
+    color: var(--fgcolor);
+    margin-right: 30px;
+}
+#header a:hover {
+    color: white;
+}
+
+.card {
+    background-color: var(--cardcolor);
+    border-radius: 40px;
+    padding: 20px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.profile {
+    text-align: center;
+}
+.profile > img {
+    width: 20ch;
+    margin: 0 auto 0 auto;
+    border-radius: 100%;
 }
 
 li:not(:first-child) {
