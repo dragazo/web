@@ -34,7 +34,7 @@ html, body {
 
 .container {
     max-width: var(--maxwidth);
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     padding: 0 20px;
 }
 *:first-child {
@@ -62,7 +62,7 @@ a:hover {
 .card {
     background-color: var(--cardcolor);
     border-radius: 40px;
-    padding: 20px;
+    padding: 20px 30px;
 }
 .row {
     display: flex;
@@ -82,7 +82,7 @@ a:hover {
 .profile {
     aspect-ratio: 1;
     width: 20ch;
-    margin: 0 20px;
+    margin-right: 20px;
     border-radius: 100%;
 }
 
