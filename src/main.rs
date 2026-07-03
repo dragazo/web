@@ -64,8 +64,8 @@ fn Home() -> Element {
             img { class: "profile", src: asset!("/assets/profile.png") }
             div {
                 h2 { "Devin Jean" }
-                p { "Assistant Professor of Computer Science" br {} "College of Basic and Applied Sciences" br {} "Middle Tennessee State University" }
-                h3 { "Contact" }
+                p { class: "large-only", "Assistant Professor of Computer Science" br {} "College of Basic and Applied Sciences" br {} "Middle Tennessee State University" }
+                h3 { class: "large-only", "Contact" }
                 div {
                     class: "row buttons",
                     a { href: "mailto:devin.jean@mtsu.edu", target: "_blank", Icon { width: 35, height: 35, icon: LdMail } }
