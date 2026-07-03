@@ -2,6 +2,9 @@ html, body {
     margin: 0;
     padding: 0;
 }
+* {
+  overflow-wrap: break-word;
+}
 #main {
     --bgcolor: #1f1f1f;
     --fgcolor: #c4c4c4;
