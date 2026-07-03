@@ -43,6 +43,22 @@ fn Layout() -> Element {
             id: "content",
             div {
                 class: "container",
+                div {
+                    class: "card row center fit",
+                    img { class: "profile", src: asset!("/assets/profile.png") }
+                    div {
+                        h2 { "Devin Jean" }
+                        p { class: "large-only", "Assistant Professor of Computer Science" br {} "College of Basic and Applied Sciences" br {} "Middle Tennessee State University" }
+                        h3 { class: "large-only", "Contact" }
+                        div {
+                            class: "row buttons",
+                            a { href: "mailto:devin.jean@mtsu.edu", target: "_blank", Icon { width: 35, height: 35, icon: LdMail } }
+                            a { href: "https://github.com/dragazo", target: "_blank", Icon { width: 30, height: 30, icon: FaGithub } }
+                            a { href: "https://orcid.org/0000-0001-9549-2324", target: "_blank", Icon { width: 30, height: 30, icon: FaOrcid } }
+                            a { href: "https://scholar.google.com/citations?user=dNvo_xcAAAAJ&hl=en", target: "_blank", Icon { width: 40, height: 40, icon: LdGraduationCap } }
+                        }
+                    }
+                }
                 Outlet::<Route> {}
             }
         }
@@ -59,22 +75,6 @@ fn Layout() -> Element {
 #[component]
 fn Home() -> Element {
     rsx! {
-        div {
-            class: "card row center fit",
-            img { class: "profile", src: asset!("/assets/profile.png") }
-            div {
-                h2 { "Devin Jean" }
-                p { class: "large-only", "Assistant Professor of Computer Science" br {} "College of Basic and Applied Sciences" br {} "Middle Tennessee State University" }
-                h3 { class: "large-only", "Contact" }
-                div {
-                    class: "row buttons",
-                    a { href: "mailto:devin.jean@mtsu.edu", target: "_blank", Icon { width: 35, height: 35, icon: LdMail } }
-                    a { href: "https://github.com/dragazo", target: "_blank", Icon { width: 30, height: 30, icon: FaGithub } }
-                    a { href: "https://orcid.org/0000-0001-9549-2324", target: "_blank", Icon { width: 30, height: 30, icon: FaOrcid } }
-                    a { href: "https://scholar.google.com/citations?user=dNvo_xcAAAAJ&hl=en", target: "_blank", Icon { width: 40, height: 40, icon: LdGraduationCap } }
-                }
-            }
-        }
         h1 { "Lab Openings" }
         p {
             "I am currently looking for a self-motivated graduate student to work with me as a Research Assistant."
@@ -87,7 +87,7 @@ fn Home() -> Element {
             " For example, I am currently mentoring an undergraduate student and we are working on a system that combines LLMs with formal reasoning frameworks to automate proof construction."
         }
         p {
-            " If you are interested or would like to discuss the position or projects further, feel free to "
+            " If you are interested or have any questions, feel free to "
             a { href: "mailto:devin.jean@mtsu.edu", "send me an email" }
             "!"
         }
