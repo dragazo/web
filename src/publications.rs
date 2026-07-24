@@ -9,6 +9,13 @@ pub struct Publication {
 
 pub static PUBLICATIONS: &[Publication] = &[
     Publication {
+        year: 2026,
+        authors: &["Devin Jean", "Suk Seo"],
+        title: "Fault-Tolerant Locating-Dominating Sets on the Infinite King Grid",
+        venue: "Utilitas Mathematica",
+        link: "https://doi.org/10.61091/um128-04",
+    },
+    Publication {
         year: 2025,
         authors: &["Devin Jean", "Suk Seo"],
         title: "On Error-Detecting Open-Locating-Dominating Sets",
