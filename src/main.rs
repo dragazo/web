@@ -107,7 +107,7 @@ fn Home() -> Element {
         }
         h1 { "Courses Taught" }
         ul {
-            li { "CSCI 3160 - Intro to Assembly Language" }
+            li { "CSCI 3160 - Assembly Language" }
             li { "CSCI 3180 - Intro to Numerical Analysis" }
             li { "CSCI 3200 - Intro to Algorithm Analysis" }
             li { "CSCI 6100 - Algorithm Analysis" }
