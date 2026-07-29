@@ -95,9 +95,11 @@ fn Home() -> Element {
         ul {
             li { "Distributed Computing and IoT" }
             li { "Embedded Programming and Robotics" }
+            li { "Computer Science Education and Gamification" }
             li { "Theoretical Computer Science" }
             li { "Automated and Computer-Assisted Proving" }
-            li { "Computer Science Education and Gamification" }
+            li { "Discrete Mathematics and Graph Theory" }
+            li { "Combinatorial Optimization" }
         }
         h1 { "Education" }
         ul {
