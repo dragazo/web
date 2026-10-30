@@ -17,6 +17,13 @@ pub static PUBLICATIONS: &[Publication] = &[
     },
     Publication {
         year: 2025,
+        authors: &["Gordon Stein", "Devin Jean", "Saman Kittani", "Menton Deweese", "Akos Ledeczi"],
+        title: "A Novice-Friendly and Accessible Networked Educational Robotics Simulation Platform",
+        venue: "Education Sciences",
+        link: "https://doi.org/10.3390/educsci15020198",
+    },
+    Publication {
+        year: 2025,
         authors: &["Devin Jean", "Suk Seo"],
         title: "On Error-Detecting Open-Locating-Dominating Sets",
         venue: "Ars Combinatoria",
